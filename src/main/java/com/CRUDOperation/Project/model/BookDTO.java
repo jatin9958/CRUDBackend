@@ -1,22 +1,19 @@
-package com.CRUDOperation.Project.entity;
+package com.CRUDOperation.Project.model;
 
-
+import com.sun.istack.NotNull;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "Books", schema = "voltsit7")
-public class BookEntity {
+public class BookDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     @NotEmpty
     private String author;
@@ -26,5 +23,4 @@ public class BookEntity {
 
     @Min(value = 0, message = "Price Should be Positive")
     private Integer price;
-
 }
